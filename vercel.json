@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "name": "ongopool",
+  "functions": {
+    "api/stripe/payment-intents.ts": {
+      "runtime": "nodejs18.x"
+    },
+    "api/stripe/customer-management.ts": {
+      "runtime": "nodejs18.x"
+    },
+    "api/stripe/webhooks.ts": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/stripe/(.*)",
+      "dest": "/api/stripe/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/dist/$1"
+    }
+  ]
+}
